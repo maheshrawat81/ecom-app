@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
 
 @ControllerAdvice
-class GlobalExceptionHandler {
+    class GlobalExceptionHandler {
 
     @ExceptionHandler(CustomException::class)
     fun BadRequestExceptin(ex: CustomException): ResponseEntity<String> {
