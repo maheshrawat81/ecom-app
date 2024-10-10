@@ -3,7 +3,7 @@ package com.example.usermanagementservice.cotroller
 import com.example.usermanagementservice.model.User
 import com.example.usermanagementservice.service.UserService
 import com.example.usermanagementservice.jwt.JwtUtil
-import com.example.usermanagementservice.repo.UserRepo
+import com.example.usermanagementservice.webclient.HttpService
 import com.example.usermanagementservice.wrappers.AuthRequest
 import com.example.usermanagementservice.wrappers.AuthResponse
 import lombok.extern.slf4j.Slf4j
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*
 class UserController @Autowired constructor(
     private val userService: UserService,
     private val jwtUtil: JwtUtil,
-    private val userRepo: UserRepo
+    private val httpService: HttpService
 ) {
     private val passwordEncoder = BCryptPasswordEncoder()
 
@@ -36,6 +36,12 @@ class UserController @Autowired constructor(
         } else {
             ResponseEntity.notFound().build()
         }
+    }
+
+    @GetMapping("/test")
+    fun testHttpCall(@RequestParam tkn:String): ResponseEntity<String> {
+        httpService.httpCallService(tkn)
+        return ResponseEntity.ok("Success")
     }
 
     @GetMapping("/authenticateToken")
