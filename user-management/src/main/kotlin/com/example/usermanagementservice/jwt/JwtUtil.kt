@@ -12,7 +12,7 @@ import java.util.*
 class JwtUtil {
 
     private val SECRET_KEY: Key = Keys.secretKeyFor(SignatureAlgorithm.HS256)
-    private val EXPIRATION_TIME = 1000*60 // 10 hours
+    private val EXPIRATION_TIME = 1000*60*5
 
 
     fun generateToken(subject: String): String {

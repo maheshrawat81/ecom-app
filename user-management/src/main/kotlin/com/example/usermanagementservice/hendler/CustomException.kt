@@ -1,4 +1,6 @@
 package com.example.usermanagementservice.hendler
 
-class CustomException(message: String) : RuntimeException(message)
+import java.lang.Exception
+
+class CustomException(message: String) : Exception(message)
 

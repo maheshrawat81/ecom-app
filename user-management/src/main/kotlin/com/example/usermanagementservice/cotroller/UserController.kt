@@ -38,6 +38,15 @@ class UserController @Autowired constructor(
         }
     }
 
+    @GetMapping("/authenticateToken")
+    fun authenticateToken(): ResponseEntity<Boolean> {
+        return try {
+            ResponseEntity.ok(true)
+        } catch (e: Exception) {
+            ResponseEntity.ok(false)
+        }
+    }
+
     @PostMapping("/login")
     fun login(@RequestBody authRequest: AuthRequest): ResponseEntity<AuthResponse> {
         val findUserByUsername = userService.validateUserByUsername(authRequest)

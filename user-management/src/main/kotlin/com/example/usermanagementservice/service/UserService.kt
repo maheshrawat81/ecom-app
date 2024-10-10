@@ -16,8 +16,6 @@ class UserService @Autowired constructor( val userRepo: UserRepo) : UserDetailsS
 
     private val passwordEncoder = BCryptPasswordEncoder()
 
-    //Todo need to integrate database
-
     fun registerUser(user: User): User {
         user.password = passwordEncoder.encode(user.password)
         userRepo.add(user)
@@ -35,7 +33,7 @@ class UserService @Autowired constructor( val userRepo: UserRepo) : UserDetailsS
         if (passwordEncoder.matches(user.password,findByUsername.password)){
             return findByUsername
         }
-        throw CustomException("INVALID USER oR PASSWoRD");
+        throw CustomException("INVALID USER OR PASSWORD");
     }
 
     override fun loadUserByUsername(username: String): UserDetails {
