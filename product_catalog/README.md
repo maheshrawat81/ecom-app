@@ -104,12 +104,23 @@ dependencies {
 	implementation 'org.jetbrains.kotlin:kotlin-reflect'
 	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+//	implementation 'org.springframework.boot:spring-boot-starter-security'
+//	implementation("io.jsonwebtoken:jjwt-api:0.11.5")
+//	implementation("io.jsonwebtoken:jjwt-impl:0.11.5")
+//	implementation("io.jsonwebtoken:jjwt-jackson:0.11.5")
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation "jakarta.servlet:jakarta.servlet-api:6.1.0"
 
 	// CouchDB dependencies
 	implementation 'org.ektorp:org.ektorp:1.5.0' // Ektorp library for CouchDB
 	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.mockito:mockito-core:3.11.2'
+	testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+
 }
 
 kotlin {
