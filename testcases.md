@@ -113,7 +113,7 @@ This document outlines the test cases for the `ProductController` class in the `
 
 ## Test Results
 
-[Click here to see the test results](path/to/your/file.html)
+[Click here to see the test results](index.html)
 
 ---
 
