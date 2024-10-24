@@ -1,6 +1,9 @@
 mvn clean install -DskipTests 
+
 mvn spring-boot:run 
+
 gradle clean build -x test 
+
 gradlew bootRun
 
 ## api/users
