@@ -44,6 +44,9 @@ ecom-app
     │                       |   └── ProductRepository.kt
     |                       ├── service
     |                       |   └── ProductService.kt
+    |                       ├── webclient
+    |                       |   ├── HttpService.kt
+    |                       |   └── WebClientConfig.kt
     │                       └── ProductCatalogApplication.kt
     └── resources
         └── application.properties
